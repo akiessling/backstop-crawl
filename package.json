@@ -51,6 +51,7 @@
     "mkpath": "1.0.0",
     "ora": "1.1.0",
     "simplecrawler": "1.0.3",
+    "urijs": "^1.18.5",
     "valid-url": "1.0.9"
   },
   "devDependencies": {

@@ -97,3 +97,13 @@ test('Debug flag produces crawl errors', async (t) => {
     const { stderr } = await execa('../index.js', ['https://expired.badssl.com/', '--debug', '--outfile=fixtures/debug.json']);
     t.truthy(stderr.includes(`✖ Error: certificate has expired`));
 });
+
+test('Development domain adds reference url', async (t) => {
+    await execa('../index.js', ['http://0.0.0.0:8080', '--development-domain=example.org', '--outfile=development-domain-test.json']);
+    const [file, expected] = await Promise.all([
+        readfile('./development-domain-test.json'),
+        readfile('./fixtures/development-domain-test.json'),
+    ])
+        .then(files => files.map(f => JSON.parse(f.toString())));
+    return t.deepEqual(file, expected);
+});

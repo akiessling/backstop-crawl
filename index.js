@@ -11,13 +11,15 @@ const cli = meow(`
       $ backstop-crawl <url>
 
     Options
-      --outfile, -o        Save the backstop config to this file
-      --ignore-robots      Ignore the sites robots.txt
-      --ignore-ssl-errors  Treat any certificate as valid (e.g. self-signed
-                            or expired)
-      --debug              Logs out errors produced while crawling
-      --allow-subdomains   Allow crawling links found to subdomains of the
-                            current domain
+      --outfile, -o          Save the backstop config to this file
+      --ignore-robots        Ignore the sites robots.txt
+      --ignore-ssl-errors    Treat any certificate as valid (e.g. self-signed
+                              or expired)
+      --debug                Logs out errors produced while crawling
+      --allow-subdomains     Allow crawling links found to subdomains of the
+                              current domain
+      --development-domain   Sets the crawled url as referenceUrl property and 
+                               replaces the domain in the url  
 
     Examples
       $ backstop-crawl http://localhost
