@@ -31,6 +31,7 @@ $ npm install --global backstop-crawl
     --ignore-ssl-errors  Treat any certificate as valid (e.g. self-signed
                           or expired)
     --debug              Logs out errors produced while crawling
+    --development-domain Insert the crawled url as reference url, replace the domain with the development domain in the generated json file to run the comparison against that
 
   Examples
     $ backstop-crawl http://localhost
